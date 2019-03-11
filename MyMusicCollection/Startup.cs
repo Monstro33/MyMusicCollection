@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using MyMusicCollection.Repositories;
 
 namespace MyMusicCollection
 {
@@ -16,6 +17,12 @@ namespace MyMusicCollection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<MusicContext>();
+            services.AddScoped<ISongRepository, SongRepository>();
+
+            //services.AddDbContext<CategoryContext>();
+            services.AddScoped<IAlbumRepository, AlbumRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +41,7 @@ namespace MyMusicCollection
                     name: "default",
                     template: "{controller=Album}/{action=Index}/{id?}");
             });
-        });
+        
         }
     }
 }

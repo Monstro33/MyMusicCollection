@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MyMusicCollection.Models.Song>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h4>Big Mikes Playlists</h4>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="/Album">Home</a></li>
+                <li><a href="/Song">All Songs</a></li>
+                <li><a href="/Album/create">Review a Album</a></li>
+                <li><a href="/Song/create">Review a Song</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="row">
+        @foreach (var song in Model)
+        {
+            <div class="colum-card">
+                <img src="@song.SongImageLocation"/>
+                <h3><a href="/Song/Details/@song.Id">@song.SongName</a></h3>
+                @*.SongInfo*@
+            </div>
+        }
+    </div>
+    <div class="footer">
+        <p>Hey, I'm D.J. Mic and I put together some awesome music playlists I think you will like. Click on a song to check it out</p>
+    </div>
+</body>
+</html>
+
+

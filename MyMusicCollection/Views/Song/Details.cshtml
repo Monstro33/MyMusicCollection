@@ -1,0 +1,55 @@
+﻿@model MyMusicCollection.Models.Song
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h4>Big Mikes Playlists</h4>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="/album">Home</a></li>
+                <li><a href="/song">All Songs</a></li>
+                <li><a href="/album/create">Review a Album</a></li>
+                <li><a href="/song/create">Review a Song</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="row">
+        <div class="colum-card-main2">
+            @{
+                string url = Model.SongImageLocation;
+                if (Model.SongImageLocation.Remove(4) != "http")
+                {
+                    url = "/" + Model.SongImageLocation;
+                }
+            }
+            <img src="@url" />
+            <p><h3>@Model.SongName </h3></p>
+
+        </div>
+        <div class="colum">
+            <h3>Song Listing</h3>
+            <p><h4>@Model.SongInfo</h4></p>
+        </div>
+        <div class="colum">
+            <p><h3>From the Listeners</h3></p>
+            <p><h4>@Model.SongReviewContent</h4></p>
+            <a href="/song">Back to list</a>
+        </div>
+    </div>
+    <div class="footer-2">
+        <p>Hey, I'm D.J. Mic and I put together some awesome music playlists I think you will like. Please feel free to leave a comment about a song.</p>
+    </div>
+</body>
+</html>
