@@ -14,12 +14,50 @@ body {
     width: 100%;
 }
 
+.wrapper-2 {
+    background-image: url("Img/Brick.jpg");
+    background-size: cover;
+    height: 120vh;
+    width: 100%;
+}
+
 .wrapper img {
     object-fit: contain;
  }
 
-h2 {
+h3 {
     text-align: center;
+    text-transform: uppercase;
+    color: #111111;
+    background-color: #2d2d2d;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-shadow: -1px -1px 1px #000,1px 1px 1px #aaa;
+    margin: 5px;
+}
+
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #111111;
+    background-color: #2d2d2d;
+    font-size: 1em;
+    padding: 2.5px;
+    letter-spacing: .1em;
+    text-shadow: -1px -1px 1px #000,1px 1px 1px #aaa;
+    margin: 5px;
+}
+
+h6 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #111111;
+    background-color: #2d2d2d;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-shadow: -1px -1px 1px #000,1px 1px 1px #aaa;
 }
 
 /* Style the header */
@@ -93,6 +131,15 @@ header {
     }
 }
 
+.grid-container {
+    margin-top: 100px;
+    height: 75%;
+}
+
+.grid-container-2 {
+    margin-top: 50px;
+    height: 100%;
+}
 /*Album Image Grid*/
 .img-grid-2 {
     display: grid;
@@ -109,10 +156,36 @@ header {
     margin: auto;
 }
 
+/*Album Index Grid*/
+.img-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin:auto;
+}
+
+.grid-wrapper-3 li {
+    display: inline-block;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+.grid-wrapper-3 img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 /*Song Image Grid*/
 .grid-wrapper {
     max-width: 90em;
     margin: 0 auto;
+    height: 100vh;
 
 }
 
@@ -120,21 +193,22 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
+    height: 75vh;
 }
 
     .grid-wrapper li {
         display: inline-block;
         overflow: hidden;
-        height: 250px;
-        width: 250px;
+        height: 200px;
+        width: 200px;
         align-items: center;
         border-radius: 10px;
         margin: 0px auto;
     }
 
     .grid-wrapper img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         object-fit: cover;
         border-radius: 10px;
      
@@ -202,11 +276,12 @@ header {
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
+    align-content: center;
     width: 100%;
-    height: 100vh;
+    height: 75vh;
     text-align: center;
-    margin-top: 0px;
+    margin: auto;
 }
 
 .row a {
@@ -248,39 +323,34 @@ header {
         object-fit: contain;
     }
 
-.colum-card-main2 {
-    /*display: flex;*/
-    /*-webkit-flex: 1;*/
-    /*flex: 1;*/
-    height: 600px;
-    width: 400px;
-    /*flex-direction: ;
-    flex-wrap: wrap;
-    text-align: center;*/
-    margin: auto;
-    align-content: center;
+.colum-card-main-1 {
+    height: 80%;
+    width: 40%;
+    margin: 25px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border: 15px;
-    /*justify-content: flex-start;*/
-    height: 65vh;
+    /*border: 15px;*/
 }
 
-    .colum-card-main2 p {
+    .colum-card-main-1 p {
         position: absolute;
         color: white;
         text-transform: uppercase;
-        /*height: 60vh;*/
         text-align: center;
-        /*left: 180px;*/
     }
 
-    .colum-card-main2 img {
-        height: 300px;
-        width: 350px;
-        /*float: left;*/
-        object-fit: contain;
+    .colum-card-main-1 img {
+        height: 400px;
+        width: 400px;
+        object-fit: cover;
     }
+
+.colum-card-main-2 {
+    height: 100%;
+    width: 60%;
+    margin-top:10%;
+    padding-right: 25px;
+}
 
 
 .colum {
@@ -429,24 +499,22 @@ header {
 
 .footer {
     background-color: black;
-    padding: 10px;
     text-align: center;
     width: 100%;
-    height: 9vh;
+    height: 10vh;
     position: fixed;
     bottom: 0;
     color: white;
     font-weight: bold;
-    align-content: center;
+
 }
 
 .footer-2 {
     background-color: black;
-    color: white;
-    padding: 10px;
+    color: white;  
     text-align: center;
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     position: fixed;
     bottom: 0;
 }

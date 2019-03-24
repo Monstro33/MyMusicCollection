@@ -27,29 +27,37 @@
             </div>
         </header>
         <div class="row">
-            <div class="colum-card-main2">
-                <img src="@Model.AlbumImageLocation" />
+            <div class="colum-card-main-1">
                 <p><h3>@Model.AlbumName </h3></p>
+                <img src="@Model.AlbumImageLocation" />
                 <p><h4>@Model.AlbumInfo</h4></p>
             </div>
-
-            <div class="colum">
-                <h3>Song Listing</h3>
-                @foreach (var song in Model.Songs)
-                {
-                    <img src="@song.SongImageLocation" />
-                    <h4><a href="/Song/Details/@song.Id">@song.SongName</a></h4>
-                }
+            <div class="colum-card-main-2">
+                <div class="grid-wrapper-3">
+                    <p><h4>Song Listing</h4></p>
+                    <ul class="img-grid-3">
+                        @foreach (var song in Model.Songs)
+                        {
+                            <li>
+                                <a href="/Song/Details/@song.Id" class="overlay-container" data-overlay-text="@song.SongName">
+                                    <img src="@song.SongImageLocation" alt="Image capture goes here 01" class="overlay-img" />
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
-            <div class="colum">
+
+            @*<div class="colum">
                 <p><h3>From the Listeners</h3></p>
                 <p><h4>@Model.AlbumReviewContent</h4></p>
                 <a href="/album">Back to list</a>
             </div>
-        </div>
+        </div>*@
         <div class="footer-2">
             <p>Hey, I'm D.J. Mic and I put together some awesome music playlists I think you will like. Click on a song to check it out.</p>
         </div>
     </div>
+
 </body>
 </html>

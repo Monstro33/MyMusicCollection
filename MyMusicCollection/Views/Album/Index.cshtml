@@ -21,31 +21,29 @@
                 <ul>
                     <li><a href="/album">Home</a></li>
                     <li><a href="/song">All Songs</a></li>
-                    <li><a href="/album/create">Review An Album</a></li>
-                    <li><a href="/song/create">Review A Song</a></li>
+                    <li><a href="/song/delete">Delete A Song</a></li>
+                    <li><a href="/song/create">Add A Song</a></li>
                 </ul>
             </div>
         </header>
-
-        <div class="grid-wrapper">
-            <ul class="img-grid-2">
-                @foreach (var album in Model)
-                {
-                    <li>
-                        <a href="/Album/Details/@album.Id" class="overlay-container" data-overlay-text="@album.AlbumName">
-                            <img src="@album.AlbumImageLocation" alt="Image capture goes here 01" class="overlay-img" />
-                        </a>
-                    </li>
-                }
-            </ul>
+        <div class="grid-container">
+            <div class="grid-wrapper">
+                <ul class="img-grid-2">
+                    @foreach (var album in Model)
+                    {
+                        <li>
+                            <a href="/Album/Details/@album.Id" class="overlay-container" data-overlay-text="@album.AlbumName">
+                                <img src="@album.AlbumImageLocation" alt="Image capture goes here 01" class="overlay-img" />
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
         </div>
-    </div>
-
-      
+    </div>     
         <div class="footer">
-            <p><h3>Hey, I'm D.J. Mike and I put together some awesome music playlists I think you will like. Check them out above.</h3></p>
+            <p><h2>Hey, I'm D.J. Mike and I put together some awesome music playlists I think you will like. Check them out above.</h2></p>
         </div>
-    </div>
 </body>                 
 </html>
 
