@@ -1,0 +1,65 @@
+﻿@model MyMusicCollection.Models.Song
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+                       
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/StyleSheet.css" rel="stylesheet" />                
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="~/Img/logo.png" />
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="/album">Home</a></li>
+                    <li><a href="/song">All Songs</a></li>
+                    <li><a href="/album/create">Review An Album</a></li>
+                    <li><a href="/song/create">Review A Song</a></li>
+                </ul>
+            </div>
+        </header>
+                @*<hr />*@
+
+        <div class="user-reviews-form">
+            <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                       
+                        <label asp-for="AlbumId"></label>
+                    <input type="button" name="AlbumId" placeholder="Old School" value="1"> Old School<br>
+                    <input type="button" name="AlbumId" value="2"> Relax<br>
+                    <input type="button" name="AlbumId" value="3"> Waves<br>
+                      
+
+                        <input asp-for="SongName" placeholder="Song Name?" class="name" required />
+                        <span asp-validation-for="SongName" class="text-danger"></span>
+
+
+                        <input asp-for="SongImageLocation" placeholder="Song Image URL?" class="image-url" required />
+                        <span asp-validation-for="SongImageLocation" class="text-danger"></span>
+
+
+                        <input asp-for="SongInfo" placeholder="Song Description." class="message" required />
+                        <span asp-validation-for="SongInfo" class="text-danger"></span>
+
+
+                        <input asp-for="SongReviewContent" placeholder="Add A Review." class="message" required />
+                        <span asp-validation-for="SongReviewContent" class="text-danger"></span>
+
+                        <input type="submit" value="Create" class="btn btn-default" />
+                        <a asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+        </div>
+</body>
+</html>
+
+                   

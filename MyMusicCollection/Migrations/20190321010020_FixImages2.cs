@@ -2,7 +2,7 @@
 
 namespace MyMusicCollection.Migrations
 {
-    public partial class ChangeSeedDataImages2 : Migration
+    public partial class FixImages2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
