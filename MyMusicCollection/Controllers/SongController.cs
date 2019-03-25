@@ -30,7 +30,7 @@ namespace MyMusicCollection.Controllers
         }
 
         [HttpGet]
-        public ViewResult Create()
+        public ViewResult Create(int expectedId)
         {
             return View();
         }

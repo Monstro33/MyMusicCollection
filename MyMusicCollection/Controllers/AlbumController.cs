@@ -26,6 +26,11 @@ namespace MyMusicCollection.Controllers
             var model = albumRepo.GetById(id);
             return View(model);
         }
+
+        public object Create()
+        {
+            throw new NotImplementedException();
+        }
         //public string Foo(int id)
         //{
         //    return (id.ToString());

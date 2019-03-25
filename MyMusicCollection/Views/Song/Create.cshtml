@@ -10,10 +10,9 @@
 <html>
 <head>
     <link href="~/StyleSheet.css" rel="stylesheet" />                
-    <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper-2">
         <header>
             <div class="logo">
                 <img src="~/Img/logo.png" />
@@ -22,8 +21,7 @@
                 <ul>
                     <li><a href="/album">Home</a></li>
                     <li><a href="/song">All Songs</a></li>
-                    <li><a href="/album/create">Review An Album</a></li>
-                    <li><a href="/song/create">Review A Song</a></li>
+                    <li><a href="/song/create">Add A Song</a></li>
                 </ul>
             </div>
         </header>
@@ -33,10 +31,10 @@
             <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                        
-                        <label asp-for="AlbumId"></label>
-                    <input type="radio" name="AlbumId"  value="1"> Old School<br>
-                    <input type="radio" name="AlbumId" value="2"> Relax<br>
-                    <input type="radio" name="AlbumId" value="3"> Waves<br>
+            @*<h4><label asp-for="AlbumId"></label></h4>*@
+                    <input type="radio" name="AlbumId" id="radio-1" value="1"><label for="radio-1">Old School</label>
+                    <input type="radio" name="AlbumId" id="radio-2" value="2"><label for="radio-2">Relax</label>
+                    <input type="radio" name="AlbumId" id="radio-3" value="3"><label for="radio-3">Waves</label>
                       
 
                         <input asp-for="SongName" placeholder="Song Name?" class="name" required />
@@ -47,15 +45,15 @@
                         <span asp-validation-for="SongImageLocation" class="text-danger"></span>
 
 
-                        <input asp-for="SongInfo" placeholder="Song Description." class="message" required />
+                        <input asp-for="SongInfo" placeholder="Song Description?" class="message" required />
                         <span asp-validation-for="SongInfo" class="text-danger"></span>
 
 
-                        <input asp-for="SongReviewContent" placeholder="Add A Review." class="message" required />
+                        <input asp-for="SongReviewContent" placeholder="Add A Review..." class="message" required />
                         <span asp-validation-for="SongReviewContent" class="text-danger"></span>
 
                         <input type="submit" value="Create" class="btn btn-default" />
-                        <a asp-action="Index">Back to List</a>
+                        <button class="btn btn-default"><a href="/song">Back to list</a></button>
                     </form>
                 </div>
         </div>

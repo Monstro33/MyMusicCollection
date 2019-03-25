@@ -24,6 +24,5 @@ namespace MyMusicCollection.Repositories
         {
             return db.Albums.Single(album => album.Id == id);
         }
-
     }
 }

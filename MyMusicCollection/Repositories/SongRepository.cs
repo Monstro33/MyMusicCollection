@@ -20,6 +20,11 @@ namespace MyMusicCollection.Repositories
             return db.Songs.ToList();
         }
 
+        public object Count()
+        {
+            throw new NotImplementedException();
+        }
+
         public object GetById(int id)
         {
             return db.Songs.Single(song => song.Id == id);
@@ -43,7 +48,7 @@ namespace MyMusicCollection.Repositories
 
         Song ISongRepository.GetById(int id)
         {
-            return db.Songs.Single(song => song.Id == id);
+            return db.Songs.Single(song => song.Id ==id);
         }
     }
 }

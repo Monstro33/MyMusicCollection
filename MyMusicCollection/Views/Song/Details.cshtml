@@ -9,10 +9,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
-    
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,700,800" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,500,300italic,500italic,700italic,900,300" rel="stylesheet" />
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper-2">
         <header>
             <div class="logo">
                 <img src="~/Img/logo.png" />
@@ -21,36 +23,35 @@
                 <ul>
                     <li><a href="/album">Home</a></li>
                     <li><a href="/song">All Songs</a></li>
-                    <li><a href="/album/create">Review An Album</a></li>
-                    <li><a href="/song/create">Review A Song</a></li>
+                    <li><a href="/song/create">Add A Song</a></li>
                 </ul>
             </div>
         </header>
         <div class="row">
-            <div class="colum-card-main2">
+            <div class="colum-card-main-1">
+                <p><h3>@Model.SongName </h3></p>
                 @{
                     string url = Model.SongImageLocation;
                     if (Model.SongImageLocation.Remove(4) != "http")
                     {
-                        url = "/" + Model.SongImageLocation;
+                        url = Model.SongImageLocation;
                     }
                 }
                 <img src="@url" />
-                <p><h3>@Model.SongName </h3></p>
-
             </div>
-            <div class="colum">
-                <h3>Song Listing</h3>
-                <p><h4>@Model.SongInfo</h4></p>
+            <div class="colum-card-main-2">
+                <h4>Song Info</h4>
+                <p><h5>@Model.SongInfo</h5></p>
             </div>
-            <div class="colum">
-                <p><h3>From the Listeners</h3></p>
-                <p><h4>@Model.SongReviewContent</h4></p>
-                <a href="/song">Back to list</a>
+            <div class="colum-card-main-2">
+                <p><h4>From the Listeners</h4></p>
+                <p><h5>@Model.SongReviewContent</h5></p>            
+                <button class="btn btn-default"><a href="/song/Delete/@Model.Id">Delete This Song</a></button>
+                <button class="btn btn-default"><a href="/song">Back to list</a></button>
             </div>
         </div>
         <div class="footer-2">
-            <p>Hey, I'm D.J. Mic and I put together some awesome music playlists I think you will like. Please feel free to leave a comment about a song.</p>
+            <p>Hey, I'm D.J. Mike and I put together some awesome music playlists I think you will like....</p>
         </div>
     </div>
 </body>
